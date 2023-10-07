@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Folder-Style Portfolio</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="folder" onclick="toggleSubFolders(this)">
+				<div class="folder-top"></div>
+				<div class="folder-content">
+					<h2>Project 1</h2>
+					<div class="sub-folder">
+						<h3>Subfolder 1</h3>
+						<p>Description of Subfolder 1</p>
+						<img
+							src="subfolder1-image.jpg"
+							alt="Subfolder 1 Image"
+							onclick="openModal('Project 1', '2022-01-01', '2022-02-01')" />
+					</div>
+					<div class="sub-folder">
+						<h3>Subfolder 2</h3>
+						<p>Description of Subfolder 2</p>
+						<img
+							src="subfolder2-image.jpg"
+							alt="Subfolder 2 Image"
+							onclick="openModal('Project 1', '2022-01-01', '2022-02-01')" />
+					</div>
+				</div>
+			</div>
+
+			<!-- Add more folders as needed -->
+		</div>
+
+		<div class="modal" id="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<h3 id="modal-title">Title</h3>
+				<p><strong>Date Started:</strong> <span id="date-started"></span></p>
+				<p>
+					<strong>Date Completed:</strong> <span id="date-completed"></span>
+				</p>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
