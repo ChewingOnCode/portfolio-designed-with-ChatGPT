@@ -42,20 +42,22 @@ html {
 nav {
   background-color: rgba(255, 255, 255, 0.8); /* Faux glass effect */
   backdrop-filter: blur(10px); /* Apply a blur effect to the background */
-  padding: 10px;
+  padding: 2px;
   border-radius: 10px;
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 0;
+  left: 0px;
   width: 100%;
   transition: background-color 0.3s ease; /* Add a smooth transition effect */
-
-  z-index: 1000; /* Ensure it's on top of other elements */
+  z-index: 100; /* Ensure it's on top of other elements */
 }
 
 nav ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 nav li {
@@ -81,58 +83,122 @@ nav i {
 }
 
 /* PORTFOLIO SECTION */
-#portfolio {
-  padding: 50px 0; /* Add some spacing around the portfolio section */
+#portfolio h2 {
+  padding: 50px 0;
+  text-align: center;
+}
+.projects {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.category {
+  cursor: pointer;
+  list-style-type: none;
+  font-weight: bold;
+  display: inline-block;
+  text-align: left;
+  margin: 0 1em;
+  color: var(--primary-color);
+  position: relative; /* Add relative positioning */
+}
+.category-title {
+  display: inline-block; /* Ensure category title does not take full width */
+  margin-right: 1em; /* Add space between title and expand icon */
 }
 
-.folder {
-  margin-bottom: 30px; /* Add spacing between folders */
+.expand-icon::after {
+  content: "\25B6"; /* Unicode arrow character (right-pointing triangle) */
+  font-size: 1.2em; /* Adjust size as needed */
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: transform 0.3s; /* Add smooth transition */
+}
+
+.category.open .expand-icon::after {
+  transform: rotate(90deg); /* Rotate arrow when category is open */
+}
+
+.sub-categories,
+.projects-list {
+  padding-left: 1em;
+  margin: 0;
+  list-style-type: none;
 }
 
 .sub-categories {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
+  list-style-type: none;
+  margin-top: 0.5em;
+  padding: 0;
 }
 
-.sub-categories li {
-  flex: 1 1 200px;
-  margin-bottom: 20px; /* Add spacing between subcategories */
-  background-color: #fff; /* Background color for each project */
-  padding: 20px; /* Add padding for a clean look */
-  border-radius: 10px; /* Add rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  opacity: 0;
-  transition: opacity 0.5s ease;
+.subcategory {
+  cursor: pointer;
+  margin-right: 1em;
+  display: inline-block;
+}
+.subcategory,
+.project {
+  cursor: pointer;
 }
 
-.sub-categories li:hover {
-  opacity: 1;
+/* Show category titles always */
+.category .category-title {
+  display: block;
 }
-.sub-categories img {
-  max-width: 100%; /* Ensure images don't exceed their container */
-  border-radius: 5px; /* Add rounded corners to images */
+
+/* Hide subcategory and project lists by default */
+.sub-categories,
+.projects-list {
+  display: none;
 }
-.sub-categories h4 {
-  margin-top: 10px; /* Add space between image and title */
-  font-size: 1.2em; /* Adjust font size for the title */
+
+/* Show subcategory and project lists when parent category or subcategory is open */
+.category.open .sub-categories,
+.subcategory.open .projects-list {
+  display: block;
 }
-.sub-categories p {
-  font-size: 0.9em; /* Adjust font size for dates */
+
+/* Adjust padding and margin for specific elements */
+.project,
+.subcategory,
+.category-title {
+  padding: 0.5em;
+  margin: 0.5em 0;
 }
-.sub-categories a {
-  display: inline-block; /* Make links display as blocks for better spacing */
-  margin-top: 10px; /* Add space between project details and links */
-  text-decoration: none;
-  color: var(--secondary-color); /* Link color (blue in this example) */
-  margin-right: 20px; /* Add space between links */
+
+/* Add border and border-radius for visual separation */
+.project,
+.subcategory,
+.category-title {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Add hover effect for interactive elements */
+.project:hover,
+.subcategory:hover,
+.category-title:hover {
+  background-color: #f0f0f0;
+}
+
+/* Add box shadow for depth effect */
+.project,
+.subcategory,
+.category-title {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* CONTACT ME */
 #contact {
-  padding: 50px 0; /* Add some spacing around the contact section */
+  padding: 50px 0;
+  text-align: center; /* Add some spacing around the contact section */
 }
 
 .contact-icons a {
