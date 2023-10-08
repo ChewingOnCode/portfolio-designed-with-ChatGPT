@@ -1,50 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Folder-Style Portfolio</title>
-		<link rel="stylesheet" href="styles.css" />
-	</head>
-	<body>
-		<div class="container">
-			<div class="folder" onclick="toggleSubFolders(this)">
-				<div class="folder-top"></div>
-				<div class="folder-content">
-					<h2>Project 1</h2>
-					<div class="sub-folder">
-						<h3>Subfolder 1</h3>
-						<p>Description of Subfolder 1</p>
-						<img
-							src="subfolder1-image.jpg"
-							alt="Subfolder 1 Image"
-							onclick="openModal('Project 1', '2022-01-01', '2022-02-01')" />
-					</div>
-					<div class="sub-folder">
-						<h3>Subfolder 2</h3>
-						<p>Description of Subfolder 2</p>
-						<img
-							src="subfolder2-image.jpg"
-							alt="Subfolder 2 Image"
-							onclick="openModal('Project 1', '2022-01-01', '2022-02-01')" />
-					</div>
-				</div>
-			</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Fontawesome 6.4 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <header>
+      <!-- Navbar goes here -->
+      <nav class="navbar">
+        <div class="logo">Your Logo</div>
+        <ul class="nav-links">
+          <li>
+            <a href="#home"><i class="fas fa-home"></i></a>
+          </li>
+          <li>
+            <a href="#projects"><i class="fas fa-cogs"></i></a>
+          </li>
+          <li>
+            <a href="#about"> <i class="fas fa-user"></i></a>
+          </li>
+          <li>
+            <a href="#contact"> <i class="fas fa-envelope"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-			<!-- Add more folders as needed -->
-		</div>
+    <section id="home">
+      <!-- Home section content -->
+    </section>
 
-		<div class="modal" id="modal">
-			<div class="modal-content">
-				<span class="close" onclick="closeModal()">&times;</span>
-				<h3 id="modal-title">Title</h3>
-				<p><strong>Date Started:</strong> <span id="date-started"></span></p>
-				<p>
-					<strong>Date Completed:</strong> <span id="date-completed"></span>
-				</p>
-			</div>
-		</div>
+    <section id="projects" class="projects">
+      <!-- Projects section content -->
+      <div class="file-system">
+        <div class="folder">
+          <div class="folder-icon">
+            <svg
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <title>HTML5</title>
+              <path
+                d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z" />
+            </svg>
+          </div>
+          <div class="folder-name">Project 1</div>
+        </div>
+        <div class="folder">
+          <div class="folder-icon"></div>
+          <div class="folder-name">Project 2</div>
+        </div>
+      </div>
+    </section>
 
-		<script src="script.js"></script>
-	</body>
+    <section id="about">
+      <!-- About section content -->
+    </section>
+
+    <section id="contact">
+      <!-- Contact section content -->
+    </section>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>
